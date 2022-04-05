@@ -2,19 +2,21 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  
   return (
     <div className="App">
-      <Person></Person>
-      <Person></Person>
+      <Person name="Rubel" naika="Moushomi"></Person>
+      <Person name="BappaRaz" naika="Cheka"></Person>
     </div>
   );
 }
 
-function Person(){
+function Person(props){
+  console.log(props)
   return (
     <div className='person'>
-      <h1>Name: Sakil All Hasan</h1>
-      <h4>Profession: Cricketer</h4>
+      <h1>Name: {props.name}</h1>
+      <h4>Hero Of: {props.naika}</h4>
     </div>
   );
 }
