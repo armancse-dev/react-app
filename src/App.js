@@ -1,27 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
-  const nayoks = ['Rubel', 'BappaRaz', 'shovu', 'Omar Sani'];
-
-  const cinemas = [
-    { nayok: 'Koober', naika: 'Kopila'},
-    { nayok: 'Rubel', naika: 'Moushumi'},
-    { nayok: 'Razzak', naika: 'Shabana'},
-    { nayok: 'Jashim', naika: 'Suchorita'},
-  ]
   return (
     <div className="App">
-      <ul>
-        {
-          nayoks.map(nayok => <li>{nayok}</li>)
-        }
-        
-      </ul>
-      {/* <Cinema nayok="J Bond" naika="Cat W"></Cinema> */}
-      {
-        cinemas.map(cinema =>    <Cinema nayok={cinema.nayok} naika={cinema.naika}></Cinema>)
-      }
+      <Counter></Counter>
+      
+    </div>
+  );
+}
+
+function Counter(){
+  const [count, setCount]= useState(0);
+  // console.log(count, setCount);
+  const handleIncrease = () => {
+    setCount(count + 1);
+  }
+
+  const handleDecrease = () => {
+    setCount(count - 1);
+  }
+  
+  return(
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={handleIncrease}>Increase</button>
+      <button onClick={handleDecrease}>Descrease</button>
       
     </div>
   );
@@ -45,6 +50,31 @@ function Cinema(props){
     </div>
   )
 }
+
+
+      // <ul>
+      //   {
+      //     nayoks.map(nayok => <li>{nayok}</li>)
+      //   }
+        
+      // </ul>
+      {/* <Cinema nayok="J Bond" naika="Cat W"></Cinema> */}
+      // {
+      //   cinemas.map(cinema =>    <Cinema nayok={cinema.nayok} naika={cinema.naika}></Cinema>)
+      // }
+
+
+
+/*
+  const nayoks = ['Rubel', 'BappaRaz', 'shovu', 'Omar Sani'];
+
+  const cinemas = [
+    { nayok: 'Koober', naika: 'Kopila'},
+    { nayok: 'Rubel', naika: 'Moushumi'},
+    { nayok: 'Razzak', naika: 'Shabana'},
+    { nayok: 'Jashim', naika: 'Suchorita'},
+  ]
+*/
 
 /*
 <Person name="Rubel" naika="Moushomi"></Person>
